@@ -8,10 +8,12 @@
   },
   "dependencies": {
     "@cloudinary/base": "^1.0.0-beta.4",
+    "@emailjs/browser": "^3.11.0",
     "@heroicons/react": "^1.0.6",
     "@tailwindcss/forms": "^0.5.3",
     "animejs": "^3.2.1",
     "cloudinary-react": "^1.8.1",
+    "emailjs": "^4.0.2",
     "framer-motion": "^10.12.16",
     "gsap": "^3.11.5",
     "lodash": "^4.17.21",

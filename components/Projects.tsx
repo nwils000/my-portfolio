@@ -1,7 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import { ChevronRightIcon } from "@heroicons/react/outline";
 import { Image, Video } from "cloudinary-react";
-import gsap from "gsap";
 
 type ProjectProps = {
   title: string;
@@ -25,11 +24,11 @@ const Project = ({
   }, []);
 
   return (
-    <div className="flex flex-col items-center justify-center max-w-lg p-6 mx-auto my-6 rounded-lg shadow-2xl h-[26rem]">
+    <div className="flex flex-col items-center justify-center max-w-lg p-6 my-6 overflow-hidden rounded-lg shadow-2xl">
       <h2 className="mb-2 text-lg font-semibold text-center text-white sm:text-xl">
         {title}
       </h2>
-      <div className="h-auto mb-4 overflow-auto text-sm text-center text-stone-200 sm:text-base">
+      <div className="h-[5rem] max-w-[23rem] overflow-auto text-sm text-center text-stone-200 sm:text-base">
         {description}
       </div>
       {isMobile ? (
@@ -38,7 +37,7 @@ const Project = ({
           publicId={`Portfolio/${imageId}`}
           alt="project image"
           crop="scale"
-          className="object-cover w-64 mb-4 shadow-lg h-36" // set both width and height here
+          className="object-cover mb-4 shadow-lg " // set both width and height here
         />
       ) : (
         <Video
@@ -48,7 +47,7 @@ const Project = ({
           muted
           loop
           crop="scale"
-          className="object-cover w-64 mb-4 shadow-lg h-36" // set both width and height here
+          className="object-cover mb-4 shadow-lg " // set both width and height here
         />
       )}
       <div className="flex justify-around w-full mt-4">
@@ -81,7 +80,7 @@ const Projects = () => {
 
   useEffect(() => {
     function handleResize() {
-      setIsMobile(window.innerWidth <= 768);
+      setIsMobile(window.innerWidth <= 980);
     }
 
     // Set the initial value
@@ -100,9 +99,9 @@ const Projects = () => {
     {
       title: "Web Design Agency",
       description:
-        "A professional web design agency site featuring a contact form and an active blog...",
-      imageId: "Screenshot_26_bbnfo9",
-      videoId: "Ignite_Ky_Professional_Web_Design_Agency...",
+        "A web design agency site featuring a contact form and an active blog...",
+      imageId: "Screenshot_136_ubecz7",
+      videoId: "ignite_qv6vwk",
       liveLink: "https://webdesignagency-live.com",
       githubLink: "https://github.com/user/webdesignagency",
     },
@@ -110,8 +109,8 @@ const Projects = () => {
       title: "Amazon.com Clone",
       description:
         "An e-commerce platform clone designed with React and CSS...",
-      imageId: "Screenshot_27_uu97q2",
-      videoId: "React_App_-_Google_Chrome_2023-02-06_17-32-52_reiglf",
+      imageId: "Screenshot_133_pg7id1",
+      videoId: "amzin_sdnkk6",
       liveLink: "https://amazonclone-live.com",
       githubLink: "https://github.com/user/amazonclone",
     },
@@ -119,8 +118,8 @@ const Projects = () => {
       title: "Birthday News Stories App",
       description:
         "An app that fetches news stories based on user's birthday...",
-      imageId: "Screenshot_100_ljdz32",
-      videoId: "React_App_-_Google_Chrome_2023-02-06_17-36-53_oxrffr",
+      imageId: "Screenshot_132_bcaoky",
+      videoId: "bday_tmlenx",
       liveLink: "https://birthdaynews-live.com",
       githubLink: "https://github.com/user/birthdaynews",
     },
@@ -129,7 +128,7 @@ const Projects = () => {
       description:
         "A user-friendly flashcard creation tool showcasing complex CSS styling...",
       imageId: "Screenshot_23_ymfj4c",
-      videoId: "React_App_-_Google_Chrome_2023-02-06_17-37-36_xrb3h4",
+      videoId: "flash_f0hzat",
       liveLink: "https://flashcardgenerator-live.com",
       githubLink: "https://github.com/user/flashcardgenerator",
     },
@@ -144,109 +143,105 @@ const Projects = () => {
     }
   }, [currentSlide, projectsData.length, autoCycle]);
 
-  useEffect(() => {
-    gsap.to(projectsRef.current[currentSlide], {
-      scale: 1.05,
-      repeat: 1,
-      yoyo: true,
-      ease: "power1.inOut",
-      duration: 0.5,
-    });
-  }, [currentSlide]);
-
   const handleProjectSelection = (index: number) => {
     setAutoCycle(false);
     setCurrentSlide(index);
   };
 
   return (
-    <div
-      className="flex flex-col items-center justify-center h-screen gap-10 "
-      id="projects"
-    >
-      <h1 className="mb-5 text-4xl font-semibold text-white">Projects</h1>
+    <div>
       {isMobile ? (
-        <div className="flex flex-col items-center gap-10">
-          <div className="flex flex-col items-center justify-center">
-            <div className="flex pt-6 flex-col justify-start w-full md:w-[18rem] p-4 rounded-lg  shadow-2xl ">
-              {projectsData.map((project, index) => (
-                <button
-                  key={index}
-                  className={`flex items-center justify-start space-x-2 p-2 rounded-lg ${
-                    index === currentSlide
-                      ? "text-blue-500 font-semibold"
-                      : "text-white hover:font-semibold"
-                  }`}
-                  onClick={() => handleProjectSelection(index)}
-                >
-                  <ChevronRightIcon
-                    className={`w-5 h-5 ${
+        <div
+          className="flex flex-col items-center justify-center h-screen gap-10 mb-44 "
+          id="projects"
+        >
+          <h1 className="mt-64 mb-5 text-4xl font-semibold text-white ">
+            Projects
+          </h1>
+          <div className="flex flex-col items-center gap-10 ">
+            <div className="flex flex-col items-center justify-center -mb-16">
+              <div className="flex pt-6 flex-col justify-start w-full md:w-[18rem] p-4 rounded-lg  shadow-2xl ">
+                {projectsData.map((project, index) => (
+                  <button
+                    key={index}
+                    className={`flex items-center justify-start space-x-2 p-2 rounded-lg ${
                       index === currentSlide
-                        ? "text-blue-500"
-                        : "text-white hover:text-blue-500"
+                        ? "text-blue-500 font-semibold"
+                        : "text-white hover:font-semibold"
                     }`}
-                  />
-                  {project.title}
-                </button>
+                    onClick={() => handleProjectSelection(index)}
+                  >
+                    <ChevronRightIcon
+                      className={`w-5 h-5 ${
+                        index === currentSlide
+                          ? "text-blue-500"
+                          : "text-white hover:text-blue-500"
+                      }`}
+                    />
+                    {project.title}
+                  </button>
+                ))}
+              </div>
+            </div>
+            <div className="flex flex-col items-center justify-center md:flex-row md:gap-10">
+              {projectsData.map((project, index) => (
+                <div
+                  key={index}
+                  className={`${
+                    index === currentSlide
+                      ? "block transition-all duration-1000"
+                      : "hidden"
+                  }`}
+                  ref={(el) => (projectsRef.current[index] = el)}
+                >
+                  <Project {...project} />
+                </div>
               ))}
             </div>
-          </div>
-          <div className="flex flex-col items-center justify-center md:flex-row md:gap-10">
-            {projectsData.map((project, index) => (
-              <div
-                key={index}
-                className={`${
-                  index === currentSlide
-                    ? "block transition-all duration-1000"
-                    : "hidden"
-                }`}
-                ref={(el) => (projectsRef.current[index] = el)}
-              >
-                <Project {...project} />
-              </div>
-            ))}
           </div>
         </div>
       ) : (
-        <div className="flex flex-row items-center gap-10">
-          <div className="flex flex-col items-center justify-center">
-            <div className="flex pt-6 flex-col justify-start w-full md:w-[18rem] p-4 rounded-lg  shadow-2xl">
-              {projectsData.map((project, index) => (
-                <button
-                  key={index}
-                  className={`flex items-center justify-start space-x-2 p-2 rounded-lg ${
-                    index === currentSlide
-                      ? "text-blue-500 font-semibold"
-                      : "text-white hover:font-semibold"
-                  }`}
-                  onClick={() => handleProjectSelection(index)}
-                >
-                  <ChevronRightIcon
-                    className={`w-5 h-5 ${
+        <div
+          className="flex flex-col items-center justify-center h-screen gap-10 "
+          id="projects"
+        >
+          <h1 className="mb-5 text-4xl font-semibold text-white">Projects</h1>
+          <div className="flex flex-row items-center gap-10">
+            <div className="flex flex-col items-center justify-center">
+              <div className="flex pt-6 flex-col justify-start w-full md:w-[18rem] p-4 rounded-lg  shadow-2xl">
+                {projectsData.map((project, index) => (
+                  <button
+                    key={index}
+                    className={`flex items-center justify-start space-x-2 p-2 rounded-lg ${
                       index === currentSlide
-                        ? "text-blue-500"
-                        : "text-white hover:text-blue-500"
+                        ? "text-blue-500 font-semibold"
+                        : "text-white hover:font-semibold"
                     }`}
-                  />
-                  {project.title}
-                </button>
+                    onClick={() => handleProjectSelection(index)}
+                  >
+                    <ChevronRightIcon
+                      className={`w-5 h-5 ${
+                        index === currentSlide
+                          ? "text-blue-500"
+                          : "text-white hover:text-blue-500"
+                      }`}
+                    />
+                    {project.title}
+                  </button>
+                ))}
+              </div>
+            </div>
+            <div className="flex flex-col items-center justify-center md:flex-row md:gap-10">
+              {projectsData.map((project, index) => (
+                <div
+                  key={index}
+                  className={`${index === currentSlide ? "block" : "hidden"}`}
+                  ref={(el) => (projectsRef.current[index] = el)}
+                >
+                  <Project {...project} />
+                </div>
               ))}
             </div>
-          </div>
-          <div className="flex flex-col items-center justify-center md:flex-row md:gap-10">
-            {projectsData.map((project, index) => (
-              <div
-                key={index}
-                className={`${
-                  index === currentSlide
-                    ? "block transition-all duration-1000"
-                    : "hidden"
-                }`}
-                ref={(el) => (projectsRef.current[index] = el)}
-              >
-                <Project {...project} />
-              </div>
-            ))}
           </div>
         </div>
       )}

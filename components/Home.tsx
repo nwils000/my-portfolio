@@ -21,9 +21,11 @@ export default function Home() {
           <div className="text-xl font-semibold text-gray-300 transition-all duration-700 ease-in-out sm:text-2xl md:text-3xl lg:text-4xl text-shadow">
             Web Developer
           </div>
-          <button className="px-4 py-4 mt-6 font-bold text-white transition-colors duration-200 transform bg-blue-600 rounded w-52 hover:bg-blue-700 hover:scale-105">
-            View My Projects
-          </button>
+          <a href="#projects">
+            <button className="px-4 py-4 mt-6 font-bold text-white transition-colors duration-200 transform bg-blue-600 rounded w-52 hover:bg-blue-700 hover:scale-105">
+              View My Projects
+            </button>
+          </a>
         </div>
       </div>
     </CSSTransition>

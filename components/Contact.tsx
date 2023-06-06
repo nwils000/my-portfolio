@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -6,6 +7,9 @@ const Contact = () => {
     email: "",
     message: "",
   });
+
+  const form = useRef();
+
   const [statusMessage, setStatusMessage] = useState("");
 
   const handleChange = (e) => {
@@ -14,7 +18,27 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setStatusMessage("Your message has been sent! Thank you for reaching out.");
+    emailjs
+      .sendForm(
+        "service_3t589y2",
+        "template_u5t6zq1",
+        form.current,
+        "aEYQQP-65mEPEsaXX"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          setStatusMessage(
+            "Your message has been sent! Thank you for reaching out."
+          );
+        },
+        (error) => {
+          console.log(error.text);
+          setStatusMessage(
+            "There was an error sending your message. Please try again."
+          );
+        }
+      );
   };
 
   return (
@@ -32,6 +56,7 @@ const Contact = () => {
         }}
       >
         <form
+          ref={form}
           onSubmit={handleSubmit}
           className="w-full max-w-md mx-auto space-y-6 text-left sm:max-w-lg"
         >
@@ -44,7 +69,7 @@ const Contact = () => {
             </label>
             <input
               type="text"
-              name="name"
+              name="user_name"
               id="name"
               placeholder="Your name"
               value={formData.name}
@@ -62,7 +87,7 @@ const Contact = () => {
             </label>
             <input
               type="email"
-              name="email"
+              name="user_email"
               id="email"
               placeholder="Your email"
               value={formData.email}
