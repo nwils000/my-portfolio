@@ -184,66 +184,69 @@ const Squares = () => {
     setSquareAmount(newValue);
   };
 
-  const squares = Array.from({ length: squareAmount }).map((_, index) => (
-    <Square
-      key={index}
-      backgroundColor="purple"
-      size={squareSize}
-      speed={squareSpeed}
-    />
-  ));
+  const squares =
+    windowWidth > 767
+      ? Array.from({ length: squareAmount }).map((_, index) => (
+          <Square
+            key={index}
+            backgroundColor="purple"
+            size={squareSize}
+            speed={squareSpeed}
+          />
+        ))
+      : null;
 
   return (
     <>
       <div className="fixed inset-0 z-0 bg-gradient-to-r from-gray-800 to-gray-900">
         {squares}
-      </div>
-      <div className="relative z-10 flex flex-col w-screen h-screen gap-20 overflow-auto">
-        {windowWidth > 767 && (
-          <div className="absolute top-0 right-0 p-4">
-            <Slider
-              label="Size"
-              min={5}
-              max={100}
-              value={squareSize}
-              onChange={handleSizeChange}
-              step={0}
-            />
-            <Slider
-              label="Speed"
-              min={0.3}
-              max={3}
-              step={0.1}
-              value={squareSpeed}
-              onChange={handleSpeedChange}
-            />
-            <Slider
-              label="Square Amount"
-              min={0}
-              max={20}
-              value={squareAmount}
-              onChange={handleAmountChange}
-              step={0}
-            />
-          </div>
-        )}
-        <Navbar />
-        <FadeInWhenVisible>
-          <Home />
-        </FadeInWhenVisible>
-        <FadeInWhenVisible>
-          <AboutMe />
-        </FadeInWhenVisible>
-        <FadeInWhenVisible>
-          <Skills />
-        </FadeInWhenVisible>
-        <FadeInWhenVisible>
-          <Projects />
-        </FadeInWhenVisible>
-        <FadeInWhenVisible>
-          <Contact />
-        </FadeInWhenVisible>
-        <Footer />
+        <div className="relative z-10 flex flex-col w-screen h-screen gap-20 overflow-auto">
+          {windowWidth > 767 && (
+            <div className="absolute top-0 right-0 p-4">
+              <Slider
+                label="Size"
+                min={5}
+                max={100}
+                value={squareSize}
+                onChange={handleSizeChange}
+                step={0}
+              />
+              <Slider
+                label="Speed"
+                min={0.3}
+                max={3}
+                step={0.1}
+                value={squareSpeed}
+                onChange={handleSpeedChange}
+              />
+              <Slider
+                label="Square Amount"
+                min={0}
+                max={20}
+                value={squareAmount}
+                onChange={handleAmountChange}
+                step={0}
+              />
+            </div>
+          )}
+          <Navbar />
+          <FadeInWhenVisible>
+            <Home />
+          </FadeInWhenVisible>
+          <FadeInWhenVisible>
+            <AboutMe />
+          </FadeInWhenVisible>
+          <FadeInWhenVisible>
+            <Skills />
+          </FadeInWhenVisible>
+          <FadeInWhenVisible>
+            <Projects />
+          </FadeInWhenVisible>
+          <FadeInWhenVisible>
+            <Contact />
+          </FadeInWhenVisible>
+          <Footer />
+        </div>
       </div>
     </>
   );
