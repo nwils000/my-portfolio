@@ -7,6 +7,8 @@ type ProjectProps = {
   description: string;
   imageId: string;
   videoId: string;
+  liveLink: string;
+  githubLink: string;
 };
 
 const Project = ({

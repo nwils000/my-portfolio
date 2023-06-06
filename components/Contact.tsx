@@ -49,12 +49,7 @@ const Contact = () => {
       <h1 className="mt-12 mb-5 text-4xl font-semibold text-white sm:text-5xl">
         Contact
       </h1>
-      <div
-        className="px-20 py-10 m-4 mx-auto text-center transition-transform duration-500 ease-in-out transform rounded-lg shadow-2xl bg-gradient-to-br sm:max-w-xl"
-        style={{
-          backgroundImage: `linear-gradient(from-blue-500 to-blue-700)`,
-        }}
-      >
+      <div className="px-20 py-10 m-4 mx-auto text-center transition-transform duration-500 ease-in-out transform rounded-lg shadow-2xl bg-gradient-to-br sm:max-w-xl">
         <form
           ref={form}
           onSubmit={handleSubmit}
