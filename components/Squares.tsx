@@ -19,7 +19,7 @@ const getNumShapes = () => {
 
 const NUM_SHAPES = getNumShapes();
 
-const getRandomPosition = (size) => {
+const getRandomPosition = (size: number) => {
   let maxX = 1000;
   let maxY = 1000;
   if (typeof window !== "undefined") {
@@ -39,7 +39,15 @@ const getRandomOpacity = () => {
   return 0.3 + Math.random() * 0.7;
 };
 
-const Square = ({ backgroundColor, size, speed }) => {
+const Square = ({
+  backgroundColor,
+  size,
+  speed,
+}: {
+  backgroundColor: string;
+  size: number;
+  speed: number;
+}) => {
   const [position, setPosition] = useState(getRandomPosition(size));
   const [velocity, setVelocity] = useState({
     x: getRandomVelocity(),
@@ -104,9 +112,23 @@ const Square = ({ backgroundColor, size, speed }) => {
   );
 };
 
-const Slider = ({ label, min, max, step, value, onChange }) => {
-  const handleSliderChange = (event) => {
-    const newValue = event.target.value;
+const Slider = ({
+  label,
+  min,
+  max,
+  step,
+  value,
+  onChange,
+}: {
+  label: string;
+  min: number;
+  max: number;
+  step: number;
+  value: number;
+  onChange: (newValue: number) => void;
+}) => {
+  const handleSliderChange = (event: { target: { value: any } }) => {
+    const newValue = Number(event.target.value);
     onChange(newValue);
   };
 
@@ -135,7 +157,7 @@ const Squares = () => {
   const [squareAmount, setSquareAmount] = useState(NUM_SHAPES);
 
   // State for window width
-  const [windowWidth, setWindowWidth] = useState(null);
+  const [windowWidth, setWindowWidth] = useState(0);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -150,15 +172,15 @@ const Squares = () => {
     }
   }, []);
 
-  const handleSizeChange = (newValue) => {
+  const handleSizeChange = (newValue: number) => {
     setSquareSize(newValue);
   };
 
-  const handleSpeedChange = (newValue) => {
+  const handleSpeedChange = (newValue: number) => {
     setSquareSpeed(newValue);
   };
 
-  const handleAmountChange = (newValue) => {
+  const handleAmountChange = (newValue: number) => {
     setSquareAmount(newValue);
   };
 
@@ -185,6 +207,7 @@ const Squares = () => {
               max={100}
               value={squareSize}
               onChange={handleSizeChange}
+              step={0}
             />
             <Slider
               label="Speed"
@@ -200,6 +223,7 @@ const Squares = () => {
               max={20}
               value={squareAmount}
               onChange={handleAmountChange}
+              step={0}
             />
           </div>
         )}

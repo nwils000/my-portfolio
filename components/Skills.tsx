@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { FaCode, FaLaptopCode, FaTools } from "react-icons/fa";
 
 const Skills = () => {
-  const [isMobile, setIsMobile] = useState(null);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     function handleResize() {
