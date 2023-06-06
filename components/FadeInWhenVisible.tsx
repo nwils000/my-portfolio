@@ -1,12 +1,13 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import anime from "animejs";
 
 const FadeInWhenVisible: React.FC = ({ children }) => {
   const targetRef = useRef<HTMLDivElement | null>(null);
   const animationRef = useRef<anime.AnimeInstance | null>(null);
+  const [triggerOnce, setTriggerOnce] = useState(false);
   const { ref: inViewRef, inView } = useInView({
-    triggerOnce: false,
+    triggerOnce: triggerOnce,
     threshold: 0.4,
   });
 
@@ -42,6 +43,21 @@ const FadeInWhenVisible: React.FC = ({ children }) => {
       }
     }
   }, [inView]);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (typeof window !== "undefined") {
+        const isMobile = window.innerWidth <= 767; // Define mobile width threshold as desired
+        setTriggerOnce(isMobile);
+      }
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   return (
     <div className="opacity-0" ref={combinedRef}>
