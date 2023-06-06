@@ -130,7 +130,7 @@ const Projects = () => {
       title: "Flashcard Generator App",
       description:
         "A user-friendly flashcard creation tool showcasing complex CSS styling...",
-      imageId: "Screenshot_23_ymfj4c",
+      imageId: "Screenshot_134_uzb7ui",
       videoId: "flash_f0hzat",
       liveLink: "https://flashcardgenerator-live.com",
       githubLink: "https://github.com/user/flashcardgenerator",
