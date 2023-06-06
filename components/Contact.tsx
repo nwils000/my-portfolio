@@ -8,37 +8,40 @@ const Contact = () => {
     message: "",
   });
 
-  const form = useRef();
+  const form = useRef<HTMLFormElement>(null);
 
   const [statusMessage, setStatusMessage] = useState("");
 
-  const handleChange = (e) => {
+  const handleChange = (e: { target: { name: any; value: any } }) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: { preventDefault: () => void }) => {
     e.preventDefault();
-    emailjs
-      .sendForm(
-        "service_3t589y2",
-        "template_u5t6zq1",
-        form.current,
-        "aEYQQP-65mEPEsaXX"
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-          setStatusMessage(
-            "Your message has been sent! Thank you for reaching out."
-          );
-        },
-        (error) => {
-          console.log(error.text);
-          setStatusMessage(
-            "There was an error sending your message. Please try again."
-          );
-        }
-      );
+
+    if (form.current) {
+      emailjs
+        .sendForm(
+          "service_3t589y2",
+          "template_u5t6zq1",
+          form.current,
+          "aEYQQP-65mEPEsaXX"
+        )
+        .then(
+          (result) => {
+            console.log(result.text);
+            setStatusMessage(
+              "Your message has been sent! Thank you for reaching out."
+            );
+          },
+          (error) => {
+            console.log(error.text);
+            setStatusMessage(
+              "There was an error sending your message. Please try again."
+            );
+          }
+        );
+    }
   };
 
   return (

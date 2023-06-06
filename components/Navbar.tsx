@@ -7,11 +7,11 @@ Modal.setAppElement("#__next");
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [appElement, setAppElement] = useState(null);
+  const [appElement, setAppElement] = useState<HTMLElement | null>(null);
 
   useEffect(() => {
     if (typeof document !== "undefined") {
-      setAppElement(document.getElementById("__next"));
+      setAppElement(() => document.getElementById("__next"));
     }
   }, []);
 
@@ -50,7 +50,6 @@ const Navbar = () => {
               content: {
                 width: "80vw",
                 height: "80vh",
-
                 margin: "auto",
                 border: "none",
                 background: "none",
@@ -65,11 +64,7 @@ const Navbar = () => {
                 alignItems: "center",
               },
             }}
-            appElement={
-              typeof window !== "undefined"
-                ? document.getElementById("__next")
-                : undefined
-            }
+            appElement={appElement}
           >
             <animated.div style={modalAnimation}>
               <div className="flex items-center justify-center h-full">

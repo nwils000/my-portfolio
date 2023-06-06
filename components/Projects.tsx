@@ -77,8 +77,9 @@ const Project = ({
 const Projects = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [autoCycle, setAutoCycle] = useState(true);
-  const projectsRef = useRef([]);
-  const [isMobile, setIsMobile] = useState(null);
+  const projectsRef = useRef<(HTMLDivElement | null)[]>([]);
+
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     function handleResize() {
