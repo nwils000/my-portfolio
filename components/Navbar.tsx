@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Modal from "react-modal";
 import { FaBars, FaTimes } from "react-icons/fa";
-import { useSpring, animated } from "react-spring";
 
 Modal.setAppElement("#__next");
 
@@ -21,11 +20,6 @@ const Navbar = () => {
 
   const navLinks = ["home", "about", "skills", "projects", "contact"];
 
-  const modalAnimation = useSpring({
-    transform: isOpen ? "translateX(0%)" : "translateX(-100%)",
-    config: { duration: 200 }, // Adjust the duration as desired (in milliseconds)
-  });
-
   return (
     <nav className="fixed top-0 left-0 z-50 h-full p-4 text-white md:p-8">
       <div className="fixed top-0 right-0 p-4 md:hidden">
@@ -42,7 +36,7 @@ const Navbar = () => {
             onRequestClose={toggleModal}
             style={{
               overlay: {
-                backgroundColor: "rgba(0,0,0,0.8)",
+                backgroundColor: "rgba(0,0,0,0.85)",
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
@@ -67,23 +61,21 @@ const Navbar = () => {
             }}
             appElement={appElement}
           >
-            <animated.div style={modalAnimation}>
-              <div className="flex items-center justify-center h-full">
-                <ul className="flex flex-col items-center list-none">
-                  {navLinks.map((link, index) => (
-                    <li key={index} className="mb-6">
-                      <a
-                        href={`#${link}`}
-                        className="text-3xl text-white transition-colors duration-300 hover:text-blue-600"
-                        onClick={toggleModal}
-                      >
-                        {link.charAt(0).toUpperCase() + link.slice(1)}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </animated.div>
+            <div className="flex items-center justify-center h-full">
+              <ul className="flex flex-col items-center list-none">
+                {navLinks.map((link, index) => (
+                  <li key={index} className="mb-6">
+                    <a
+                      href={`#${link}`}
+                      className="text-3xl text-white transition-colors duration-300 hover:text-blue-600"
+                      onClick={toggleModal}
+                    >
+                      {link.charAt(0).toUpperCase() + link.slice(1)}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </Modal>
         )}
       </div>
