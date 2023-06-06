@@ -110,7 +110,7 @@ const Contact = () => {
               value={formData.message}
               onChange={handleChange}
               required
-              rows="4"
+              rows={4}
               className="w-full p-2 text-white bg-transparent border border-white rounded form-textarea"
             />
           </div>
