@@ -23,6 +23,7 @@ const Navbar = () => {
 
   const modalAnimation = useSpring({
     transform: isOpen ? "translateX(0%)" : "translateX(-100%)",
+    config: { duration: 200 }, // Adjust the duration as desired (in milliseconds)
   });
 
   return (
