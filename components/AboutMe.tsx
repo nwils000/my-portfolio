@@ -50,7 +50,7 @@ const AboutMe = () => {
           backgroundImage: `linear-gradient(from-blue-500 to-blue-700)`,
         }}
       >
-        <p className="mb-4 text-lg lg:text-2xl">
+        <p className="mb-4 text-lg leading-3 lg:text-2xl">
           I'm Nathan, a front-end developer specialized in JavaScript, React,
           and Node, with over 3 years of industry experience. Having lead
           development teams and actively participated in various projects, I

@@ -4,7 +4,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative py-6 -mt-10 text-white bg-gradient-to-r from-gray-800 to-gray-900">
+    <footer className="relative py-6 -mt-10 text-white ">
       <div className="container mx-auto text-center">
         <p className="mb-4 font-semibold">
           &copy; {currentYear} Nathan Wilson. All rights reserved.
