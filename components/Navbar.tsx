@@ -91,7 +91,7 @@ const Navbar = () => {
               <span className="mb-2 text-sm font-semibold transition-all duration-300 text-slate-300 group-hover:text-white md:mb-3 md:text-base lg:text-lg xl:text-xl 2xl:text-2xl">
                 {link.charAt(0).toUpperCase() + link.slice(1)}
               </span>
-              <div className="w-6 h-6 transition-all duration-300 transform border-2 border-white rounded-full circle group-hover:scale-125 md:w-8 md:h-8 lg:w-10 lg:h-10 xl:w-12 xl:h-12 2xl:w-14 2xl:h-14"></div>
+              <div className="w-6 h-6 transition-all duration-300 transform border-2 border-white rounded-full circle group-hover:scale-110 md:w-8 md:h-8 lg:w-10 lg:h-10 xl:w-12 xl:h-12 2xl:w-14 2xl:h-14"></div>
             </a>
           </li>
         ))}
