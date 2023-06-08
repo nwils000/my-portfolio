@@ -3,8 +3,8 @@ import emailjs from "@emailjs/browser";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
+    user_name: "",
+    user_email: "",
     message: "",
   });
 
@@ -60,7 +60,7 @@ const Contact = () => {
         >
           <div>
             <label
-              htmlFor="name"
+              htmlFor="user_name"
               className="block mb-2 text-lg font-medium text-white"
             >
               Name
@@ -68,9 +68,9 @@ const Contact = () => {
             <input
               type="text"
               name="user_name"
-              id="name"
+              id="user_name"
               placeholder="Your name"
-              value={formData.name}
+              value={formData.user_name}
               onChange={handleChange}
               required
               className="w-full p-2 text-white bg-transparent border border-white rounded form-input"
@@ -78,7 +78,7 @@ const Contact = () => {
           </div>
           <div>
             <label
-              htmlFor="email"
+              htmlFor="user_email"
               className="block mb-2 text-lg font-medium text-white"
             >
               Email
@@ -86,9 +86,9 @@ const Contact = () => {
             <input
               type="email"
               name="user_email"
-              id="email"
+              id="user_email"
               placeholder="Your email"
-              value={formData.email}
+              value={formData.user_email}
               onChange={handleChange}
               required
               className="w-full p-2 text-white bg-transparent border border-white rounded form-input"
