@@ -45,12 +45,12 @@ const AboutMe = () => {
     >
       <h2 className="mt-12 mb-5 text-4xl font-semibold text-white">About Me</h2>
       <div
-        className="container p-4 m-4 mx-auto text-center transition-transform duration-500 ease-in-out transform rounded-lg shadow-2xl bg-gradient-to-br "
+        className="container m-4 mx-auto text-center transition-transform duration-500 ease-in-out transform rounded-lg shadow-2xl bg-gradient-to-br "
         style={{
           backgroundImage: `linear-gradient(from-blue-500 to-blue-700)`,
         }}
       >
-        <p className="mb-4 text-lg leading-3 lg:text-2xl">
+        <p className="p-6 text-lg leading-10 lg:leading-10 lg:text-2xl">
           I'm Nathan, a front-end developer specialized in JavaScript, React,
           and Node, with over 3 years of industry experience. Having lead
           development teams and actively participated in various projects, I
