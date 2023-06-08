@@ -95,48 +95,56 @@ const Projects = () => {
 
   const projectsData = [
     {
+      title: "Portfolio",
+      description:
+        "A personal showcase of my skills and projects, built with Next.js and TypeScript.",
+      imageUrl:
+        "https://res.cloudinary.com/dwonrd0xx/image/upload/v1686259301/Portfolio/Screenshot_138_on6erl.png",
+      videoUrl:
+        "https://res.cloudinary.com/dwonrd0xx/video/upload/v1686259321/Portfolio/Nathan_Wilson_-_Portfolio_-_AVG_Secure_Browser_2023-06-08_17-18-59_aejpbx.mp4",
+      liveLink: "https://nathanwilson.dev",
+      githubLink: "https://github.com/nwils000/my-portfolio",
+    },
+    {
       title: "Web Design Agency",
       description:
-        "A web design agency site featuring a contact form and an active blog...",
+        "A web design agency site featuring a contact form and an active blog.",
       imageUrl:
         "https://res.cloudinary.com/dwonrd0xx/image/upload/c_scale/v1/Portfolio/Screenshot_136_ubecz7.png",
       videoUrl:
         "https://res.cloudinary.com/dwonrd0xx/video/upload/c_scale/v1/Portfolio/ignite_qv6vwk.webm",
-      liveLink: "https://webdesignagency-live.com",
-      githubLink: "https://github.com/user/webdesignagency",
+      liveLink: "https://igniteky.com",
     },
     {
       title: "Amazon.com Clone",
-      description:
-        "An e-commerce platform clone designed with React and CSS...",
+      description: "An e-commerce platform clone designed with React and CSS.",
       imageUrl:
         "https://res.cloudinary.com/dwonrd0xx/image/upload/c_scale/v1/Portfolio/Screenshot_133_pg7id1.png",
       videoUrl:
         "https://res.cloudinary.com/dwonrd0xx/video/upload/c_scale/v1/Portfolio/amzin_sdnkk6.webm",
-      liveLink: "https://amazonclone-live.com",
-      githubLink: "https://github.com/user/amazonclone",
+      liveLink: "https://amzin-clone.netlify.app/",
+      githubLink: "https://github.com/nwils000/amazon-clone-app",
     },
     {
       title: "Birthday News Stories App",
-      description:
-        "An app that fetches news stories based on user's birthday...",
+      description: "An app that fetches news stories based on user's birthday.",
       imageUrl:
         "https://res.cloudinary.com/dwonrd0xx/image/upload/c_scale/v1/Portfolio/Screenshot_132_bcaoky.png",
       videoUrl:
         "https://res.cloudinary.com/dwonrd0xx/video/upload/c_scale/v1/Portfolio/bday_tmlenx.webm",
-      liveLink: "https://birthdaynews-live.com",
-      githubLink: "https://github.com/user/birthdaynews",
+      liveLink: "https://birthday-historical-data.netlify.app/",
+      githubLink: "https://github.com/nwils000/birthday-data-app",
     },
     {
       title: "Flashcard Generator App",
       description:
-        "A user-friendly flashcard creation tool showcasing complex CSS styling...",
+        "A user-friendly flashcard creation tool showcasing complex CSS styling.",
       imageUrl:
         "https://res.cloudinary.com/dwonrd0xx/image/upload/c_scale/v1/Portfolio/Screenshot_134_uzb7ui.png",
       videoUrl:
         "https://res.cloudinary.com/dwonrd0xx/video/upload/c_scale/v1/Portfolio/flash_f0hzat.webm",
-      liveLink: "https://flashcardgenerator-live.com",
-      githubLink: "https://github.com/user/flashcardgenerator",
+      liveLink: "https://nathans-flashcard-app.netlify.app/",
+      githubLink: "https://github.com/nwils000/flashcard-app",
     },
   ];
 
