@@ -1,12 +1,11 @@
 import { useEffect, useState, useRef } from "react";
 import { ChevronRightIcon } from "@heroicons/react/outline";
-import { Image, Video } from "cloudinary-react";
 
 type ProjectProps = {
   title: string;
   description: string;
-  imageId: string;
-  videoId: string;
+  imageUrl: string;
+  videoUrl: string;
   liveLink: string;
   githubLink: string;
 };
@@ -14,8 +13,8 @@ type ProjectProps = {
 const Project = ({
   title,
   description,
-  imageId,
-  videoId,
+  imageUrl,
+  videoUrl,
   liveLink,
   githubLink,
 }: ProjectProps) => {
@@ -34,22 +33,18 @@ const Project = ({
         {description}
       </div>
       {isMobile ? (
-        <Image
-          cloudName="dwonrd0xx"
-          publicId={`Portfolio/${imageId}`}
+        <img
+          src={imageUrl}
           alt="project image"
-          crop="scale"
-          className="object-cover mb-4 shadow-lg " // set both width and height here
+          className="object-cover mb-4 shadow-lg"
         />
       ) : (
-        <Video
-          cloudName="dwonrd0xx"
-          publicId={`Portfolio/${videoId}`}
+        <video
+          src={videoUrl}
           autoPlay
           muted
           loop
-          crop="scale"
-          className="object-cover mb-4 shadow-lg " // set both width and height here
+          className="object-cover mb-4 shadow-lg"
         />
       )}
       <div className="flex justify-around w-full mt-4">
@@ -103,8 +98,10 @@ const Projects = () => {
       title: "Web Design Agency",
       description:
         "A web design agency site featuring a contact form and an active blog...",
-      imageId: "Screenshot_136_ubecz7",
-      videoId: "ignite_qv6vwk",
+      imageUrl:
+        "https://res.cloudinary.com/dwonrd0xx/image/upload/c_scale/v1/Portfolio/Screenshot_136_ubecz7.png",
+      videoUrl:
+        "https://res.cloudinary.com/dwonrd0xx/video/upload/c_scale/v1/Portfolio/ignite_qv6vwk.webm",
       liveLink: "https://webdesignagency-live.com",
       githubLink: "https://github.com/user/webdesignagency",
     },
@@ -112,8 +109,10 @@ const Projects = () => {
       title: "Amazon.com Clone",
       description:
         "An e-commerce platform clone designed with React and CSS...",
-      imageId: "Screenshot_133_pg7id1",
-      videoId: "amzin_sdnkk6",
+      imageUrl:
+        "https://res.cloudinary.com/dwonrd0xx/image/upload/c_scale/v1/Portfolio/Screenshot_133_pg7id1.png",
+      videoUrl:
+        "https://res.cloudinary.com/dwonrd0xx/video/upload/c_scale/v1/Portfolio/amzin_sdnkk6.webm",
       liveLink: "https://amazonclone-live.com",
       githubLink: "https://github.com/user/amazonclone",
     },
@@ -121,8 +120,10 @@ const Projects = () => {
       title: "Birthday News Stories App",
       description:
         "An app that fetches news stories based on user's birthday...",
-      imageId: "Screenshot_132_bcaoky",
-      videoId: "bday_tmlenx",
+      imageUrl:
+        "https://res.cloudinary.com/dwonrd0xx/image/upload/c_scale/v1/Portfolio/Screenshot_132_bcaoky.png",
+      videoUrl:
+        "https://res.cloudinary.com/dwonrd0xx/video/upload/c_scale/v1/Portfolio/bday_tmlenx.webm",
       liveLink: "https://birthdaynews-live.com",
       githubLink: "https://github.com/user/birthdaynews",
     },
@@ -130,8 +131,10 @@ const Projects = () => {
       title: "Flashcard Generator App",
       description:
         "A user-friendly flashcard creation tool showcasing complex CSS styling...",
-      imageId: "Screenshot_134_uzb7ui",
-      videoId: "flash_f0hzat",
+      imageUrl:
+        "https://res.cloudinary.com/dwonrd0xx/image/upload/c_scale/v1/Portfolio/Screenshot_134_uzb7ui.png",
+      videoUrl:
+        "https://res.cloudinary.com/dwonrd0xx/video/upload/c_scale/v1/Portfolio/flash_f0hzat.webm",
       liveLink: "https://flashcardgenerator-live.com",
       githubLink: "https://github.com/user/flashcardgenerator",
     },
