@@ -41,7 +41,7 @@ const AboutMe = () => {
   return (
     <section
       id="about"
-      className="flex flex-col items-center justify-center min-h-screen gap-10 p-4 mx-auto text-left text-white font-roboto"
+      className="container flex flex-col items-center justify-center min-h-screen gap-10 p-4 mx-auto text-left text-white font-roboto"
     >
       <h2 className="mt-12 mb-5 text-4xl font-semibold text-white">About Me</h2>
       <div
