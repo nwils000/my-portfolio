@@ -16,16 +16,22 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta
           name="description"
-          content="Portfolio of Nathan Wilson - Web Developer"
+          content="Your portfolio site description goes here"
         />
         <title>Nathan Wilson - Portfolio</title>
-        {/* Additional meta tags */}
-        <meta name="author" content="Nathan Wilson" />
-        <meta name="keywords" content="portfolio, web development, Next.js" />
-        <meta name="theme-color" content="#ffffff" />
-        {/* Add more meta tags as needed */}
-        <link rel="icon" href="/path/to/favicon.ico" />
-        {/* Add your favicon path */}
+        {/* Add additional meta tags here */}
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="https://res.cloudinary.com/dwonrd0xx/image/upload/v1686186706/Portfolio/portfolio-icon-16_y5ve9a.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="https://res.cloudinary.com/dwonrd0xx/image/upload/v1686186706/Portfolio/portfolio-icon-32_epn0q9.png"
+        />
       </Head>
       <Component {...pageProps} />
     </>
