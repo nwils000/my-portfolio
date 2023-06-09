@@ -10,27 +10,22 @@ import {
 const AboutMe = () => {
   const socialLinks = [
     {
-      href: "https://linkedin.com/in/nathanwilson",
+      href: "https://www.linkedin.com/in/nathan-wilson-1b3715265",
       icon: <FaLinkedin className="text-2xl text-white hover:text-blue-600" />,
       color: "from-blue-500 to-blue-700",
     },
     {
-      href: "https://github.com/nathanwilson",
+      href: "https://github.com/nwils000",
       icon: <FaGithub className="text-2xl text-white hover:text-gray-400" />,
       color: "from-gray-500 to-gray-700",
     },
     {
-      href: "https://twitter.com/nathanwilson",
-      icon: <FaTwitter className="text-2xl text-white hover:text-blue-400" />,
-      color: "from-blue-400 to-blue-600",
-    },
-    {
-      href: "https://facebook.com/nathanwilson",
+      href: "https://www.facebook.com/nathan.wilson.5648/",
       icon: <FaFacebook className="text-2xl text-white hover:text-blue-600" />,
       color: "from-blue-600 to-blue-800",
     },
     {
-      href: "https://instagram.com/nathanwilson",
+      href: "https://www.instagram.com/nathan_wilsonn/",
       icon: (
         <FaInstagram className="text-2xl text-white hover:text-purple-500" />
       ),
