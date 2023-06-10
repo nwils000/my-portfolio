@@ -16,7 +16,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta
           name="description"
-          content="Your portfolio site description goes here"
+          content="Dynamic Web Developer Portfolio: Showcasing a variety of projects created using a diverse range of languages, including React, JavaScript, CSS, and more. Experience visually captivating designs and seamless user interactions."
         />
         <title>Nathan Wilson - Portfolio</title>
         {/* Add additional meta tags here */}
