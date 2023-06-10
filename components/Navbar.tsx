@@ -41,7 +41,7 @@ const Navbar = () => {
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
-                zIndex: 50,
+                zIndex: 49,
               },
               content: {
                 width: "80vw",
@@ -53,7 +53,7 @@ const Navbar = () => {
                 borderRadius: "50px",
                 outline: "none",
                 padding: "0",
-                zIndex: 50,
+                zIndex: 49,
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "center",

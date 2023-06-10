@@ -202,7 +202,7 @@ const Squares = () => {
         {squares}
         <div className="relative z-10 flex flex-col w-screen h-screen gap-20 overflow-auto">
           {windowWidth > 767 && (
-            <div className="absolute top-0 right-0 p-4">
+            <div className="absolute top-0 right-0 z-50 p-4">
               <Slider
                 label="Size"
                 min={5}
