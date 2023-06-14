@@ -29,14 +29,7 @@ const Skills = () => {
     },
     {
       category: "Frameworks & Libraries",
-      items: [
-        "React",
-        "Redux",
-        "Express",
-        "Next.js",
-        "Bootstrap",
-        "Tailwind CSS",
-      ],
+      items: ["React", "Redux", "Next.js", "Bootstrap", "Tailwind CSS"],
       icon: <FaLaptopCode className="mb-4 text-6xl text-white" />,
       color: "from-green-500 to-green-700",
     },
