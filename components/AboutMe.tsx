@@ -46,13 +46,12 @@ const AboutMe = () => {
         }}
       >
         <p className="p-6 text-lg leading-10 lg:leading-10 lg:text-2xl">
-          I'm Nathan, a front-end developer specialized in JavaScript, React,
-          and Node, with over 4 years of industry experience. Having lead
-          development teams and actively participated in various projects, I
-          have honed notable skills in DevOps, accessibility, API integration,
-          and SEO. My passion lies in the end-to-end process of web development,
-          from designing intuitive UIs to ensuring optimal performance and user
-          experiences.
+          I'm Nathan, a front-end developer with over 3 years of experience in
+          JavaScript, React, and Node. I've lead development teams and actively
+          participated in various projects, and I'm skilled in DevOps,
+          accessibility, API integration, and SEO. I'm passionate about the
+          end-to-end process of web development, from designing intuitive UIs to
+          ensuring optimal performance and user experiences.
         </p>
       </div>
       <div className="flex justify-center mt-6 space-x-2 md:space-x-4">
