@@ -21,7 +21,7 @@ const Navbar = () => {
   const navLinks = ["home", "about", "skills", "projects", "contact"];
 
   return (
-    <nav className="fixed top-0 left-0 z-50 h-full p-4 text-white md:p-8 lg:p-12 xl:p-16">
+    <nav className="fixed top-0 left-0 z-50 h-screen p-2 overflow-y-auto text-white sm:p-4 md:p-8 lg:p-12 xl:p-16">
       <div className="fixed top-0 right-0 p-4 md:p-8 lg:p-12 xl:p-16">
         <button className="md:hidden" onClick={toggleModal}>
           {isOpen ? (
