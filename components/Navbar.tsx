@@ -81,7 +81,7 @@ const Navbar = () => {
         )}
       </div>
 
-      <ul className="flex-col items-center justify-center hidden h-screen md:flex">
+      <ul className="flex flex-col items-center justify-center h-screen md:flex">
         {navLinks.map((link, index) => (
           <li key={index} className="my-2 md:my-3 lg:my-4 xl:my-5 2xl:my-6">
             <a
