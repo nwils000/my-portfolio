@@ -21,7 +21,7 @@ const Navbar = () => {
   const navLinks = ["home", "about", "skills", "projects", "contact"];
 
   return (
-    <nav className="fixed top-0 left-0 z-50 px-2 overflow-y-auto text-white sm:px-4 md:px-8 lg:px-12 xl:px-16">
+    <nav className="fixed top-0 left-0 z-50 px-2 text-white sm:px-4 md:px-8 lg:px-12 xl:px-16">
       <div className="fixed top-0 right-0 p-4 sm:p-8 lg:p-12 xl:p-16">
         <button className="md:hidden" onClick={toggleModal}>
           {isOpen ? (
@@ -63,7 +63,7 @@ const Navbar = () => {
             appElement={appElement}
           >
             <div className="flex items-center justify-center h-full">
-              <ul className="flex flex-col items-center space-y-4 list-none md:space-y-6 lg:space-y-8 xl:space-y-10 2xl:space-y-12">
+              <ul className="flex flex-col items-center space-y-2 list-none md:space-y-4 lg:space-y-8 xl:space-y-10 2xl:space-y-12">
                 {navLinks.map((link, index) => (
                   <li key={index}>
                     <a
